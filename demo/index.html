@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Attendance System</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="poster-container">
+        <!-- Background decorations -->
+        <div class="bg-decoration bg-decoration-1"></div>
+        <div class="bg-decoration bg-decoration-2"></div>
+        
+        <!-- Sidebar Menu -->
+        <div class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <div class="sidebar-logo">
+                    <span class="material-icons">fingerprint</span>
+                    SmartAttend
+                </div>
+                <button class="sidebar-close" id="sidebar-close">
+                    <span class="material-icons">close</span>
+                </button>
+            </div>
+            <nav class="sidebar-nav">
+                <a href="#" class="sidebar-nav-item active">
+                    <span class="material-icons">dashboard</span>
+                    Dashboard
+                </a>
+                <a href="#" class="sidebar-nav-item">
+                    <span class="material-icons">how_to_reg</span>
+                    Attendance
+                </a>
+                <a href="#" class="sidebar-nav-item">
+                    <span class="material-icons">assessment</span>
+                    Reports
+                </a>
+                <a href="#" class="sidebar-nav-item">
+                    <span class="material-icons">devices</span>
+                    Devices
+                </a>
+                <a href="#" class="sidebar-nav-item">
+                    <span class="material-icons">settings</span>
+                    Settings
+                </a>
+            </nav>
+        </div>
+        
+        <!-- Backdrop Overlay -->
+        <div class="backdrop" id="backdrop"></div>
+        
+        <!-- Navbar -->
+        <div class="navbar">
+            <div class="navbar-left">
+                <button class="menu-toggle" id="menu-toggle">
+                    <span class="material-icons">menu</span>
+                </button>
+                <div class="logo">
+                    <span class="material-icons">fingerprint</span>
+                    SmartAttend
+                </div>
+            </div>
+            
+            <div class="navbar-center">
+                <div class="nav-links">
+                    <a href="#" class="nav-link active">Home</a>
+                    <a href="#" class="nav-link">Features</a>
+                    <a href="#" class="nav-link">Contact us</a>
+                </div>
+            </div>
+            
+            <div class="navbar-right">
+                <button class="login-btn">
+                    <span class="material-icons">login</span>
+                    Sign in or Login
+                </button>
+                <div class="user-avatar">AD</div>
+            </div>
+        </div>
+        
+        <!-- Animated Hero Section -->
+        <div class="hero-section">
+            <div class="hero-slider">
+                <!-- Slide 1: Face Recognition -->
+                <div class="hero-slide active">
+                    <img src="https://sfile.chatglm.cn/images-ppt/bdfed7a0b23d.jpg" alt="Face Recognition">
+                    <div class="hero-content">
+                        <div class="hero-label">Advanced Technology</div>
+                        <h1 class="hero-title">Face Recognition Attendance</h1>
+                        <p class="hero-description">Mark attendance instantly with cutting-edge facial recognition technology. No physical contact required.</p>
+                        <div class="hero-buttons">
+                            <button class="btn btn-primary">Start Face Scan</button>
+                            <button class="btn btn-secondary">Learn More</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Slide 2: QR Code -->
+                <div class="hero-slide">
+                    <img src="https://sfile.chatglm.cn/images-ppt/0b2e2318bc91.png" alt="QR Code">
+                    <div class="hero-content">
+                        <div class="hero-label">Quick & Simple</div>
+                        <h1 class="hero-title">QR Code Attendance</h1>
+                        <p class="hero-description">Fast check-in with personalized QR codes. Perfect for events and temporary access control.</p>
+                        <div class="hero-buttons">
+                            <button class="btn btn-primary">Generate QR Codes</button>
+                            <button class="btn btn-secondary">View Demo</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Slide 3: RFID -->
+                <div class="hero-slide">
+                    <img src="https://sfile.chatglm.cn/images-ppt/84d08c151368.jpg" alt="RFID Card">
+                    <div class="hero-content">
+                        <div class="hero-label">Reliable & Secure</div>
+                        <h1 class="hero-title">RFID Card Attendance</h1>
+                        <p class="hero-description">Contactless RFID card scanning for reliable attendance tracking. Works in all lighting conditions.</p>
+                        <div class="hero-buttons">
+                            <button class="btn btn-primary">Configure RFID</button>
+                            <button class="btn btn-secondary">Setup Guide</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Slider Controls -->
+            <button class="hero-nav hero-prev">
+                <span class="material-icons">chevron_left</span>
+            </button>
+            <button class="hero-nav hero-next">
+                <span class="material-icons">chevron_right</span>
+            </button>
+            
+            <div class="hero-controls">
+                <div class="hero-dot active" data-slide="0"></div>
+                <div class="hero-dot" data-slide="1"></div>
+                <div class="hero-dot" data-slide="2"></div>
+            </div>
+        </div>
+        
+        <!-- Stats Cards -->
+        <div class="stats-container">
+            <div class="stat-card">
+                <div class="stat-icon total">
+                    <span class="material-icons">people</span>
+                </div>
+                <div class="stat-value">1250</div>
+                <div class="stat-label">Total Members</div>
+                <div class="stat-change positive">
+                    <span class="material-icons" style="font-size: 16px;">arrow_upward</span> 5% from last month
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon present">
+                    <span class="material-icons">check_circle</span>
+                </div>
+                <div class="stat-value">980</div>
+                <div class="stat-label">Present Today</div>
+                <div class="stat-change positive">
+                    <span class="material-icons" style="font-size: 16px;">arrow_upward</span> 2% from yesterday
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon absent">
+                    <span class="material-icons">cancel</span>
+                </div>
+                <div class="stat-value">120</div>
+                <div class="stat-label">Absent</div>
+                <div class="stat-change negative">
+                    <span class="material-icons" style="font-size: 16px;">arrow_downward</span> 3% from yesterday
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon late">
+                    <span class="material-icons">schedule</span>
+                </div>
+                <div class="stat-value">50</div>
+                <div class="stat-label">Late Check-ins</div>
+                <div class="stat-change negative">
+                    <span class="material-icons" style="font-size: 16px;">arrow_downward</span> 1% from yesterday
+                </div>
+            </div>
+        </div>
+        
+        <!-- Attendance Panel -->
+        <div class="attendance-panel">
+            <div class="panel-tabs">
+                <div class="panel-tab active">Face</div>
+                <div class="panel-tab">QR</div>
+                <div class="panel-tab">RFID</div>
+            </div>
+            <div class="panel-content">
+                <div class="attendance-mode">
+                    <div class="mode-image">
+                        <img src="https://sfile.chatglm.cn/images-ppt/21ab588983f5.jpg" alt="Face Recognition">
+                    </div>
+                    <div class="mode-title">Face Recognition</div>
+                    <div class="mode-description">Advanced facial recognition technology for instant attendance marking</div>
+                    <button class="mode-btn">Start Face Scan</button>
+                </div>
+                <div class="attendance-mode">
+                    <div class="mode-image">
+                        <img src="https://sfile.chatglm.cn/images-ppt/0b2e2318bc91.png" alt="QR Code">
+                    </div>
+                    <div class="mode-title">QR Code</div>
+                    <div class="mode-description">Simple QR code scanning for quick attendance check-in</div>
+                    <button class="mode-btn">Start QR Scan</button>
+                </div>
+                <div class="attendance-mode">
+                    <div class="mode-image">
+                        <img src="https://sfile.chatglm.cn/images-ppt/84d08c151368.jpg" alt="RFID Card">
+                    </div>
+                    <div class="mode-title">RFID Card</div>
+                    <div class="mode-description">Contactless RFID card scanning for reliable attendance tracking</div>
+                    <button class="mode-btn">Ready to Scan</button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Recent Attendance Table -->
+        <div class="table-section">
+            <div class="table-header">
+                <div class="table-title">Recent Attendance</div>
+                <div class="table-controls">
+                    <select class="filter-dropdown">
+                        <option>Today</option>
+                        <option>This Week</option>
+                        <option>This Month</option>
+                    </select>
+                    <input type="text" class="search-box" placeholder="Search name or ID">
+                    <button class="export-btn">Export CSV</button>
+                </div>
+            </div>
+            <table class="attendance-table">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>ID</th>
+                        <th>Department</th>
+                        <th>Time</th>
+                        <th>Mode</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <div class="user-cell">
+                                <div class="user-avatar-small">JD</div>
+                                John Doe
+                            </div>
+                        </td>
+                        <td>SA987</td>
+                        <td>Engineering</td>
+                        <td>10:00 AM</td>
+                        <td>Face</td>
+                        <td><span class="status-badge status-present">Present</span></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="user-cell">
+                                <div class="user-avatar-small">JS</div>
+                                Jane Smith
+                            </div>
+                        </td>
+                        <td>SA654</td>
+                        <td>Marketing</td>
+                        <td>9:15 AM</td>
+                        <td>QR</td>
+                        <td><span class="status-badge status-present">Present</span></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="user-cell">
+                                <div class="user-avatar-small">RK</div>
+                                Robert Kim
+                            </div>
+                        </td>
+                        <td>SA321</td>
+                        <td>Sales</td>
+                        <td>9:30 AM</td>
+                        <td>RFID</td>
+                        <td><span class="status-badge status-present">Present</span></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="user-cell">
+                                <div class="user-avatar-small">DL</div>
+                                David Lee
+                            </div>
+                        </td>
+                        <td>SA789</td>
+                        <td>HR</td>
+                        <td>10:15 AM</td>
+                        <td>Face</td>
+                        <td><span class="status-badge status-late">Late</span></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="user-cell">
+                                <div class="user-avatar-small">MJ</div>
+                                Mary Johnson
+                            </div>
+                        </td>
+                        <td>SA456</td>
+                        <td>Finance</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td><span class="status-badge status-absent">Absent</span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
+        <!-- Stylish Footer -->
+        <div class="footer">
+            <div class="footer-content">
+                <!-- Company Info -->
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <span class="material-icons">fingerprint</span>
+                        SmartAttend
+                    </div>
+                    <p class="footer-description">
+                        Smart Attendance System is a comprehensive solution for modern attendance tracking using Face Recognition, QR Code, and RFID technologies.
+                    </p>
+                    <div class="social-icons">
+                        <div class="social-icon">
+                            <span class="material-icons">facebook</span>
+                        </div>
+                        <div class="social-icon">
+                            <span class="material-icons">alternate_email</span>
+                        </div>
+                        <div class="social-icon">
+                            <span class="material-icons">chat</span>
+                        </div>
+                        <div class="social-icon">
+                            <span class="material-icons">link</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Quick Links -->
+                <div class="footer-section">
+                    <h3 class="footer-heading">Product</h3>
+                    <ul class="footer-links">
+                        <li><a href="#"><span class="material-icons">arrow_right</span>Features</a></li>
+                        <li><a href="#"><span class="material-icons">arrow_right</span>Security</a></li>
+                        <li><a href="#"><span class="material-icons">arrow_right</span>Integrations</a></li>
+                        <li><a href="#"><span class="material-icons">arrow_right</span>Pricing</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Resources -->
+                <div class="footer-section">
+                    <h3 class="footer-heading">Resources</h3>
+                    <ul class="footer-links">
+                        <li><a href="#"><span class="material-icons">arrow_right</span>Documentation</a></li>
+                        <li><a href="#"><span class="material-icons">arrow_right</span>API Reference</a></li>
+                        <li><a href="#"><span class="material-icons">arrow_right</span>Support Center</a></li>
+                        <li><a href="#"><span class="material-icons">arrow_right</span>Blog</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Newsletter -->
+                <div class="footer-section">
+                    <h3 class="footer-heading">Stay Updated</h3>
+                    <p class="footer-description">
+                        Subscribe to our newsletter for latest updates and features.
+                    </p>
+                    <div class="newsletter">
+                        <form class="newsletter-form">
+                            <input type="email" class="newsletter-input" placeholder="Your email address">
+                            <button type="submit" class="newsletter-btn">
+                                <span class="material-icons">arrow_forward</span>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <div class="copyright">
+                    © 2025 SmartAttend. All rights reserved.
+                </div>
+                <div class="footer-bottom-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                    <a href="#">Cookie Policy</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
