@@ -27,16 +27,16 @@ This is an online attendance count web application developed using *HTML, CSS, J
 - Express.js  
 
 ### Database
-- MongoDB h
+- MongoDB 
 
 
 ## Installation and Setup
 
 1. Clone the repository  
-   ```bash
+   git bash
    git clone https://github.com/your-username/attendance-app.git
- cd backend
+   cd backend
 npm install
- PORT=5000
+PORT=5000
 MONGO_URI=your_mongodb_connection_string
- npm start
+npm start
